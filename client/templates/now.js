@@ -1,5 +1,5 @@
 Meteor.subscribe('reports');
-Session.setDefault('counter', 0);
+Session.setDefault('easter egg counter', 0);
 
 function getReports() {
 
@@ -28,19 +28,15 @@ Template.now.helpers({
 });
 
 Template.now.helpers({
-  counter: function() {
-    return Session.get('counter');
-  },
   duzo: function() {
-    if (Session.get('counter') > 6) {
+    if (Session.get('easter egg counter') > 6) {
       return "Jest dużodobrze."
     };
   },
 });
 
 Template.now.events({
-  'click #egg': function(event) {
-      Session.set('counter', Session.get('counter') + 1);
-      //alert(Session.get('counter'))
-  },
+    'click .cover': function(event) {
+        Session.set('easter egg counter', Session.get('easter egg counter') + 1);
+    },
 });
