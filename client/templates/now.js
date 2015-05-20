@@ -29,14 +29,16 @@ Template.now.helpers({
 
 Template.now.helpers({
   duzo: function() {
+    var audio = new Audio('test22.mp3');
     if (Session.get('easter egg counter') > 6) {
       return "Jest dużodobrze."
+      audio.play();
     };
   },
 });
 
 Template.now.events({
-    'click .cover': function(event) {
-        Session.set('easter egg counter', Session.get('easter egg counter') + 1);
+  'click .cover': function(event) {
+      Session.set('easter egg counter', Session.get('easter egg counter') + 1);
     },
 });
