@@ -234,9 +234,11 @@ li.line.active + li.line.active {
   margin: 0;
 }
 
-.title,
-.subtitle {
+.title {
   color: rgba(0, 0, 0, 0.87);
+}
+.subtitle {
+  color: #6363CE
 }
 
 .strong {
